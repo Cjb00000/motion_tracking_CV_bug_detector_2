@@ -1,5 +1,6 @@
 # motion_tracking_CV_bug_detector_2
 ![Alt Text](./gif_frames/0007.jpg)
+![Alt Text](./bee_classifier.gif)
 
 # Project Overview
 This repository contains code for running and training a motion detector for insects in a natural environment. Below is a list of high-level steps outlining the development:
