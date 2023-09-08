@@ -12,3 +12,6 @@ The impetus for creating this repository/codebase was spurred from my interest i
 
 # Project Details
 To Do
+
+# Additional Information
+The cv2.createBackgroundSubtractorMOG2() function uses the Mixture of Gaussians (MOG2) algorithm to model and update the background of a video sequence. It maintains a statistical model of each pixel's color over time. When a pixel's color significantly deviates from its modeled background, it is considered part of the foreground, allowing the algorithm to detect moving objects in a video by identifying pixels that change over time.
