@@ -1,5 +1,6 @@
 # motion_tracking_CV_bug_detector_2
 ![Alt Text](./gif_frames/0007.jpg)
+![Alt Text](./moth_classifier.gif)
 ![Alt Text](./bee_classifier.gif)
 
 # Project Overview
