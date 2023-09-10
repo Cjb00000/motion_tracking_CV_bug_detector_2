@@ -11,19 +11,29 @@ This repository contains code for running and training a motion detector for ins
  - Retraining script for fine-tuning ResNet18
 
 # Motivation
-The impetus for creating this repository/codebase was spurred from my interest in computer vision and its implementation in robotic systems. One example of applied computer vision that piqued my interest was a laserweeding application. In this application, an autonomous system uses computer vision to detect weeds and marks them for removal; thus eliminating the need for harmful herbicides. My interest is to expand on this solution to detect moving targets, such as bugs, and thereby eliminating the need for pesticides.
+The impetus for creating this repository/codebase was spurred from my interest in computer vision and its implementation in robotic systems. One example of applied computer vision that piqued my interest was a laserweeding application. In this application, an autonomous system uses computer vision to detect weeds and marks them for removal; thus eliminating the need for harmful herbicides. My interest is to expand on this solution to detect moving targets, such as bugs, and thereby reducing the need for pesticides.
 
 # Project Details
 To Do
-main.py = implements a motion tracker 
+main.py = implements a motion tracker and image classifier on a user specified video. Also used for generating chips for data labeling.
+    - Hyperparameters
+        -
 
 main_with_video_save.py = a copy of main, with the ability to save frames as a gif
 
-finetune_resnet = alters the ResNet18 architecture into a multiclass or binary classifier (binary in this case) using PyTorch to train data gathered by the user into an image classifier
+finetune_resnet = alters the ResNet18 architecture into a multiclass or binary classifier (binary in this case) using PyTorch to train a model on data gathered by the user into an image classifier
 
 utils.py = a collection of functions called multiple times throughout the other files
 
 
 
 # Additional Information
+Back-propagation = 
+
+Convolutional Neural Network = 
+
+Loss =
+
+Linear Regression
+
 The cv2.createBackgroundSubtractorMOG2() function uses the Mixture of Gaussians (MOG2) algorithm to model and update the background of a video sequence. It maintains a statistical model of each pixel's color over time. When a pixel's color significantly deviates from its modeled background, it is considered part of the foreground, allowing the algorithm to detect moving objects in a video by identifying pixels that change over time.
