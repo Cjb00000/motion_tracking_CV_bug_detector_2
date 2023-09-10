@@ -15,11 +15,14 @@ The impetus for creating this repository/codebase was spurred from my interest i
 
 # Project Details
 To Do
-main.py = implements a motion tracker and image classifier
-main_with_video_save.py = a copy of main that saves the frames as jpg images
-image_to_gif.py = converts the saved images to a gif
-finetune_resnet = alters the ResNet18 architecture into a multiclass or binary classifier (binary in this case) using PyTorch 
+main.py = implements a motion tracker 
+
+main_with_video_save.py = a copy of main, with the ability to save frames as a gif
+
+finetune_resnet = alters the ResNet18 architecture into a multiclass or binary classifier (binary in this case) using PyTorch to train data gathered by the user into an image classifier
+
 utils.py = a collection of functions called multiple times throughout the other files
+
 
 
 # Additional Information
