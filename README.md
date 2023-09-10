@@ -34,6 +34,16 @@ Convolutional Neural Network =
 
 Loss =
 
-Linear Regression
+Linear Regression =
+
+Weights = the numbers in the matrices in the model that determine what classified an image
 
 The cv2.createBackgroundSubtractorMOG2() function uses the Mixture of Gaussians (MOG2) algorithm to model and update the background of a video sequence. It maintains a statistical model of each pixel's color over time. When a pixel's color significantly deviates from its modeled background, it is considered part of the foreground, allowing the algorithm to detect moving objects in a video by identifying pixels that change over time.
+
+#Project Timeline
+-motion tracker
+-false positives
+-tried multiclassifier
+-forgot to add new weights so thought it didnt work
+-switched to binary classifier on more data
+validation, deployment training data
