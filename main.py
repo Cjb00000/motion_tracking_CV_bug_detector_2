@@ -10,12 +10,12 @@ def main():
     area_threshold = 400  # the contour area required to be considered for an object (minimum contour area)
     is_bee_threshold = 0.25  # minimum confidence probability required to classify/filter image as a bee
     is_moth_threshold = 0.06
-    num_classes = 4
+    num_classes = 2
     device = 'cpu'
-    task_name = 'bee'
-    video_filepath = f"./{task_name}_task/deployment_data/PXL_20230902_203647066.mp4" # file path for video to predict on
-    generate_chips_dir = None #f"./{task_name}_task/validation_data/unlabeled_chips"
-    weights_path = '4-class_resnet18.pth'
+    task_name = 'moth'
+    video_filepath = f"./{task_name}_task/deployment_data/deployment_moth.mp4" # file path for video to predict on
+    generate_chips_dir = None#f"./{task_name}_task/training_data/unlabeled_chips" #None if not generating chips
+    weights_path = 'moth_task_2-class_resnet18.pth'
 
     cv2.namedWindow('Your Window Name', cv2.WINDOW_NORMAL)  # Create a resizable window
     cv2.resizeWindow('Your Window Name', 1080, 480)  # Set the desired width and height
@@ -53,7 +53,7 @@ def main():
                 _, predicted_class = outputs.max(1)
 
                 if not generate_chips_dir:
-                    if torch.sigmoid(outputs)[0][0] > is_bee_threshold:
+                    if torch.sigmoid(outputs)[0][0] > is_moth_threshold:
                         #if more than threshhold% sure its the variable draw a box aka detect
                         #print(predicted_class)
                         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 4)

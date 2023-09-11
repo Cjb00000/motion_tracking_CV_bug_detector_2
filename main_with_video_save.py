@@ -11,7 +11,7 @@ def main():
     num_classes = 2  # the number of classes for the classifier
     device = 'cpu'
     task_name = 'moth'
-    video_filepath = f"./{task_name}_task/deployment_data/moth_deployment.mp4" # file path for video to predict on
+    video_filepath = f"./{task_name}_task/deployment_data/deployment_moth.mp4" # file path for video to predict on
     generate_chips_dir = None #f"./{task_name}_task/validation_data/unlabeled_chips"
     weights_path = 'moth_task_2-class_resnet18.pth'
     frame_output_dir = './gif_frames'
