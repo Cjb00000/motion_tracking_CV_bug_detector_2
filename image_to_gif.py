@@ -31,6 +31,6 @@ output_filename = 'output.gif'
 #         image = imageio.imread(image_file)
 #         writer.append_data(image)
 
-imageio.mimsave(output_filename, image_arrays, format='GIF', duration=300)
+imageio.mimsave(output_filename, image_arrays, format='GIF', duration=300) #loop=-1 for loop metadata (in readme file)
 
 print(f'GIF saved as {output_filename}')

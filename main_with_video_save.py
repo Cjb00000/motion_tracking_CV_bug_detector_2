@@ -8,7 +8,7 @@ def main():
     varThreshold = 100  # increasing detects less false positives
     area_threshold = 400  # the contour area required to be considered for an object (minimum contour area)
     classifier_threshold = 0.06  # minimum confidence probability required to classify/filter image as a bee
-    num_classes = 2
+    num_classes = 2  # the number of classes for the classifier
     device = 'cpu'
     task_name = 'moth'
     video_filepath = f"./{task_name}_task/deployment_data/moth_deployment.mp4" # file path for video to predict on
@@ -37,8 +37,8 @@ def main():
             area = cv2.contourArea(cnt)  # Calculate area and remove small elements
             if area > area_threshold:
                 x, y, w, h = cv2.boundingRect(cnt)  # creates a bounding box from the limits of the contour polygon
-                #if not generate_chips_dir:
-                    #cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 3) #for motion tracking (red boxes)
+                if not generate_chips_dir:
+                    cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 3) #for motion tracking (red boxes)
                 # a bounding box is defined by an x,y pixel coordinate and its width and height
                 input_image = frame[y:y + h, x:x + w]  # crops the frame to the coordinates given by cv2.boundingRect()
                 if generate_chips_dir:
@@ -54,9 +54,9 @@ def main():
 
                 if not generate_chips_dir:
                     if torch.sigmoid(outputs)[0][0] > classifier_threshold:
-                        #if more than threshhold% sure its the variable draw a box aka detect
+                        #if more than threshhold% sure its the variable draw a box (detect)
                         #print(predicted_class)
-                        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 8)
+                        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 8)
                     #if predicted_class == 0: #is it the most likely class, then draw a box
                         #cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 3)
 
