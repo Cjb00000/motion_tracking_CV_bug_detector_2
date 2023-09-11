@@ -27,23 +27,15 @@ utils.py = a collection of functions called multiple times throughout the other 
 
 
 # Additional Information
-Back-propagation = calculates the gradient of the loss function with respect to the model's parameters, enabling the model to learn and improve its performance through iterative optimization. Calculates and uses the slopes (gradients) of derivatives with respect to the model's parameters to update those parameters during training, allowing the neural network to learn and improve its predictions. The gradients must be zeroed in the code to ensure the parameters are updated correctly to improve predictions.
-
-Convolutional Neural Network = a deep learning model specialized in processing grid-like data, such as images, by using convolutional layers to automatically learn and extract hierarchical features from the input data.
-
-Loss = quantifies the error or the difference between the predicted values and the actual target values in a machine learning or deep learning model.
-
-Linear Regression = models the relationship between a dependent variable and one or more independent variables by fitting a linear equation to the observed data.
-
-Weights = the numbers in the matrices in the model that determine what classified an image
-
-The cv2.createBackgroundSubtractorMOG2() function uses the Mixture of Gaussians (MOG2) algorithm to model and update the background of a video sequence. It maintains a statistical model of each pixel's color over time. When a pixel's color significantly deviates from its modeled background, it is considered part of the foreground, allowing the algorithm to detect moving objects in a video by identifying pixels that change over time.
+ - Back-propagation = calculates the gradient of the loss function with respect to the model's parameters, enabling the model to learn and improve its performance through iterative optimization. Calculates and uses the slopes (gradients) of derivatives with respect to the model's parameters to update those parameters during training, allowing the neural network to learn and improve its predictions. The gradients must be zeroed in the code to ensure the parameters are updated correctly to improve predictions.
+ - Convolutional Neural Network = a deep learning model specialized in processing grid-like data, such as images, by using convolutional layers to automatically learn and extract hierarchical features from the input data.
+ - Loss = quantifies the error or the difference between the predicted values and the actual target values in a machine learning or deep learning model.
+ - Linear Regression = models the relationship between a dependent variable and one or more independent variables by fitting a linear equation to the observed data.
+ - Weights = the numbers in the matrices in the model that determine what classified an image
+ - The cv2.createBackgroundSubtractorMOG2() function uses the Mixture of Gaussians (MOG2) algorithm to model and update the background of a video sequence. It maintains a statistical model of each pixel's color over time. When a pixel's color significantly deviates from its modeled background, it is considered part of the foreground, allowing the algorithm to detect moving objects in a video by identifying pixels that change over time.
 
 # Project Timeline
  - Motion tracker was the first implementation, but produced many false positives due to wind and camera movements. Attempted to remove plants by rejecting green objects from the dectector, but this was ineffective as the bugs and plants were too close in color.
-
  - Tried a multiclassifier for image classification, though landed on using a binary classifier of plant and not-plant for detecting bugs.
-
  - Made an error and forgot to add new weights after finetuning resnet so I thought it did not work, which led me to collect different data. Later on, this proved to be a benefit as I could test the project on multiple datasets.
-
  - Validation, deployment, and training data for image classification
