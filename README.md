@@ -14,15 +14,11 @@ This repository contains code for running and training a motion detector for ins
 The impetus for creating this repository/codebase was spurred from my interest in computer vision and its implementation in robotic systems. One example of applied computer vision that piqued my interest was a laserweeding application. In this application, an autonomous system uses computer vision to detect weeds and marks them for removal; thus eliminating the need for harmful herbicides. My interest is to expand on this solution to detect moving targets, such as bugs, and thereby reducing the need for pesticides in farming.
 
 # Project Details
-main.py = implements a motion tracker and image classifier on a user specified video. Also used for generating chips for data labeling.
-
-main_with_video_save.py = a copy of main, with the ability to save frames as a jpg files
-
-image_to_gif.py = converts jpg files to a gif
-
-finetune_resnet = alters the ResNet18 architecture into a multiclass or binary classifier (binary in this case) using PyTorch to train a model on data gathered by the user into an image classifier
-
-utils.py = a collection of functions called multiple times throughout the other files
+ - main.py = implements a motion tracker and image classifier on a user specified video. Also used for generating chips for data labeling.
+ - main_with_video_save.py = a copy of main, with the ability to save frames as a jpg files
+ - image_to_gif.py = converts jpg files to a gif
+ - finetune_resnet = alters the ResNet18 architecture into a multiclass or binary classifier (binary in this case) using PyTorch to train a model on data gathered by the user into an image classifier
+ - utils.py = a collection of functions called multiple times throughout the other files
 
 
 
