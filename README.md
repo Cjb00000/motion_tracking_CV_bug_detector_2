@@ -40,9 +40,9 @@ Weights = the numbers in the matrices in the model that determine what classifie
 The cv2.createBackgroundSubtractorMOG2() function uses the Mixture of Gaussians (MOG2) algorithm to model and update the background of a video sequence. It maintains a statistical model of each pixel's color over time. When a pixel's color significantly deviates from its modeled background, it is considered part of the foreground, allowing the algorithm to detect moving objects in a video by identifying pixels that change over time.
 
 # Project Timeline
- - motion tracker was the first implementation, but produced many false positives due to wind and camera movements. Attempted to remove plants by rejecting green objects from the dectector, but this was ineffective as the bugs and plants were too close in color.
+ - Motion tracker was the first implementation, but produced many false positives due to wind and camera movements. Attempted to remove plants by rejecting green objects from the dectector, but this was ineffective as the bugs and plants were too close in color.
 
- - Tried a multiclassifier for image classification, but a lot of the data was ambiguous, and landed on using a binary classifier of plant and not-plant.
+ - Tried a multiclassifier for image classification, though landed on using a binary classifier of plant and not-plant for detecting bugs.
 
  - Made an error and forgot to add new weights after finetuning resnet so I thought it did not work, which led me to collect different data. Later on, this proved to be a benefit as I could test the project on multiple datasets.
 
