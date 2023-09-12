@@ -38,5 +38,6 @@ The impetus for creating this repository/codebase was spurred from my interest i
 # Project Timeline
  - Motion tracker was the first implementation, but produced many false positives due to wind and camera movements. Attempted to remove plants by rejecting green objects from the dectector, but this was ineffective as the bugs and plants were too close in color.
  - Tried a multiclassifier for image classification, though landed on using a binary classifier of plant and not-plant for detecting bugs.
+ - Initially trained a model and detected on a video using its own data, just to see if it will work, as it should be highly successful in detecting what is a bee and not a bee on its own data. It was successful, so I moved on to training a model using seperate data.
  - Made an error and forgot to add new weights after finetuning resnet so I thought it did not work, which led me to collect different data. Later on, this proved to be a benefit as I could test the project on multiple datasets.
- - Validation, deployment, and training data for image classification
+ - Validation, deployment, and training data for image classification, using a training video for finetuning resnet, a validation video to compare, and a deployment video to use the model on. This ensures the model is not trained on its own data.
