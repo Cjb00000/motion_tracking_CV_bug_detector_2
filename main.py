@@ -8,8 +8,7 @@ def main():
     history = 0  # the minimum number of frames that a pixel must persist to be considered for an object
     varThreshold = 100  # increasing detects less false positives
     area_threshold = 400  # the contour area required to be considered for an object (minimum contour area)
-    is_bee_threshold = 0.25  # minimum confidence probability required to classify/filter image as a bee
-    is_moth_threshold = 0.06
+    classifier_threshold = 0.05  # minimum confidence probability required to classify/filter image as a bee/moth
     num_classes = 2
     device = 'cpu'
     task_name = 'moth'
@@ -37,8 +36,8 @@ def main():
             area = cv2.contourArea(cnt)  # Calculate area and remove small elements
             if area > area_threshold:
                 x, y, w, h = cv2.boundingRect(cnt)  # creates a bounding box from the limits of the contour polygon
-                if not generate_chips_dir:  # uncomment this line and the line below for all motion tracking boxes
-                    cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 3) #for motion tracking (red boxes)
+                #if not generate_chips_dir:  # uncomment this line and the line below for all motion tracking boxes
+                    #cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 3) #for motion tracking (red boxes)
                 # a bounding box is defined by an x,y pixel coordinate and its width and height
                 input_image = frame[y:y + h, x:x + w]  # crops the frame to the coordinates given by cv2.boundingRect()
                 if generate_chips_dir:
@@ -53,7 +52,7 @@ def main():
                 _, predicted_class = outputs.max(1)
 
                 if not generate_chips_dir:
-                    if torch.sigmoid(outputs)[0][0] > is_moth_threshold:
+                    if torch.sigmoid(outputs)[0][0] > classifier_threshold:
                         #if more than threshhold% sure its the variable draw a box aka detect
                         #print(predicted_class)
                         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 4)

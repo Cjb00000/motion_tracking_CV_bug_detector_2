@@ -13,7 +13,7 @@ def main():
     task_name = 'moth'
     video_filepath = f"./{task_name}_task/deployment_data/deployment_moth.mp4" # file path for video to predict on
     generate_chips_dir = None #f"./{task_name}_task/validation_data/unlabeled_chips"
-    weights_path = 'moth_task_2-class_resnet18.pth'
+    weights_path = 'moth_task_2-class_resnet18.pth' #the weights made from finetune_resnet.py
     frame_output_dir = './gif_frames'
 
     cv2.namedWindow('Your Window Name', cv2.WINDOW_NORMAL)  # Create a resizable window
