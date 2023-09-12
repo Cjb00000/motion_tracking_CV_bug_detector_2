@@ -1,6 +1,6 @@
 # motion_tracking_CV_bug_detector_2
 Still Frame:
-![Alt Text](./gif_frames/0007.jpg)
+![Alt Text](./still_image_moth.jpg)
 Motion tracker with moth classifier, red shows all motion detected, green shows motion with moth classifier (click for gif):
 ![Alt Text](./moth_motion_tracker_and_image_classifier.gif)
 Bee Classifier, other motion detection removed (click for gif):
