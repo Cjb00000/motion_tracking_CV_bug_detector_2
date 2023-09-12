@@ -1,7 +1,12 @@
 # motion_tracking_CV_bug_detector_2
+Still Frame:
 ![Alt Text](./gif_frames/0007.jpg)
-![Alt Text](./moth_classifier.gif)
+Motion tracker with moth classifier, red shows all motion detected, green shows motion with moth classifier (click for gif):
+![Alt Text](./moth_motion_tracker_and_image_classifier.gif)
+Bee Classifier, other motion detection removed (click for gif):
 ![Alt Text](./bee_classifier.gif)
+Moth classifier, other motion detection removed (click for gif):
+![Alt Text](./moth_classifier.gif)
 
 # Project Overview
 This repository contains code for running and training a motion detector for insects in a natural environment. Below is a list of high-level steps outlining the development:
