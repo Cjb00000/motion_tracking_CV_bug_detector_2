@@ -34,6 +34,9 @@ The impetus for creating this repository/codebase was spurred from my interest i
  - Linear Regression = models the relationship between a dependent variable and one or more independent variables by fitting a linear equation to the observed data.
  - Weights = the numbers in the matrices in the model that determine what classified an image
  - The cv2.createBackgroundSubtractorMOG2() function uses the Mixture of Gaussians (MOG2) algorithm to model and update the background of a video sequence. It maintains a statistical model of each pixel's color over time. When a pixel's color significantly deviates from its modeled background, it is considered part of the foreground, allowing the algorithm to detect moving objects in a video by identifying pixels that change over time.
+ - Precision focuses on the quality of positive predictions (minimizing false positives).
+ - Recall focuses on the completeness of positive predictions (minimizing false negatives).
+ - They are often balanced using the F1 score, which is the harmonic mean of precision and recall.
 
 # Project Timeline
  - Motion tracker was the first implementation, but produced many false positives due to wind and camera movements. Attempted to remove plants by rejecting green objects from the dectector, but this was ineffective as the bugs and plants were too close in color.
